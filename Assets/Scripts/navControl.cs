@@ -10,6 +10,7 @@ public class navControl : MonoBehaviour
     bool isWalking = true;
     private Animator animator;
     public GameObject lookTarget;
+    public float speed = 2.5f;
     float rotateSpeed = 1f;
 
     float mySliderValue;
@@ -18,6 +19,8 @@ public class navControl : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        agent.speed = speed;
+        animator.speed = agent.speed * 0.5f;
     }
 
     void OnGUI()
